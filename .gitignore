@@ -5,3 +5,10 @@
 # React Router
 /.react-router/
 /build/
+
+# app data
+/data/
+
+# testing
+/playwright-report/
+/test-results/
