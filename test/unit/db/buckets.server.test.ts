@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import type { DatabaseSync } from "node:sqlite";
-import { createDb } from "./client.server";
-import { createBucket, getBucket, listBuckets, deleteBucket } from "./buckets.server";
+import { createDb } from "~/db/client.server";
+import { createBucket, getBucket, listBuckets, deleteBucket } from "~/db/buckets.server";
 
 describe("buckets", () => {
   let db: DatabaseSync;

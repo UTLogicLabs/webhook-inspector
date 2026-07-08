@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { HeadersTable } from "./HeadersTable";
+import { HeadersTable } from "~/components/HeadersTable";
 
 describe("HeadersTable", () => {
   it("renders an empty state", () => {

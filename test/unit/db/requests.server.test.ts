@@ -1,14 +1,14 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import type { DatabaseSync } from "node:sqlite";
-import { createDb } from "./client.server";
-import { createBucket } from "./buckets.server";
+import { createDb } from "~/db/client.server";
+import { createBucket } from "~/db/buckets.server";
 import {
   insertRequest,
   listRequests,
   getRequest,
   insertReplayResult,
   type NewRequestInput,
-} from "./requests.server";
+} from "~/db/requests.server";
 
 function baseInput(
   bucketId: string,
@@ -100,10 +100,10 @@ describe("requests", () => {
   it("trims to the configured retention limit per bucket", async () => {
     process.env.RETENTION_LIMIT = "3";
     vi.resetModules();
-    const { createDb: createDb2 } = await import("./client.server");
-    const { createBucket: createBucket2 } = await import("./buckets.server");
+    const { createDb: createDb2 } = await import("~/db/client.server");
+    const { createBucket: createBucket2 } = await import("~/db/buckets.server");
     const { insertRequest: insertRequest2, listRequests: listRequests2 } =
-      await import("./requests.server");
+      await import("~/db/requests.server");
 
     const freshDb = createDb2(":memory:");
     const freshBucketId = createBucket2(freshDb).id;

@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { createRoutesStub } from "react-router";
-import { SignatureVerifier } from "./SignatureVerifier";
+import { SignatureVerifier } from "~/components/SignatureVerifier";
 
 describe("SignatureVerifier", () => {
   it("shows a valid result after submitting", async () => {

@@ -11,14 +11,14 @@ Every change to `app/` must be covered by a test. There are no exceptions.
 
 ### Test structure
 
-Unit tests live alongside the source file they cover in `app/`:
+Unit tests live in `test/unit/`, mirroring the `app/` directory structure:
 
 | Source file | Test file |
 |---|---|
-| `app/components/HeadersTable.tsx` | `app/components/HeadersTable.test.tsx` |
-| `app/lib/signatures.server.ts` | `app/lib/signatures.server.test.ts` |
+| `app/components/HeadersTable.tsx` | `test/unit/components/HeadersTable.test.tsx` |
+| `app/lib/signatures.server.ts` | `test/unit/lib/signatures.server.test.ts` |
 
-E2E tests live in `e2e/` at the repo root and cover full user flows (one spec file per route/feature group).
+E2E tests live in `test/e2e/` and cover full user flows (one spec file per route/feature group).
 
 ### Commands
 
