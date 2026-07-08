@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { createHmac } from "node:crypto";
-import { verifyGithubSignature, verifyStripeSignature } from "./signatures.server";
+import { verifyGithubSignature, verifyStripeSignature } from "~/lib/signatures.server";
 
 describe("verifyGithubSignature", () => {
   const secret = "ghsecret";

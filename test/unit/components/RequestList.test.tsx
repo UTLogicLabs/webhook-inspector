@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
-import { RequestList, type RequestListItem } from "./RequestList";
+import { RequestList, type RequestListItem } from "~/components/RequestList";
 
 const requests: RequestListItem[] = [
   {

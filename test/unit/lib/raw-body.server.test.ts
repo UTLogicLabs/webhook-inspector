@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { encodeBody, decodeBody } from "./raw-body.server";
+import { encodeBody, decodeBody } from "~/lib/raw-body.server";
 
 describe("encodeBody / decodeBody", () => {
   it("marks empty bodies", () => {
@@ -34,7 +34,7 @@ describe("encodeBody / decodeBody", () => {
   it("truncates bodies over the size cap and preserves the true size", async () => {
     process.env.MAX_BODY_BYTES = "10";
     vi.resetModules();
-    const { encodeBody: encodeBodyWithCap } = await import("./raw-body.server");
+    const { encodeBody: encodeBodyWithCap } = await import("~/lib/raw-body.server");
 
     const bytes = new TextEncoder().encode("x".repeat(20));
     const result = encodeBodyWithCap(bytes);
